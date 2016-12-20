@@ -1,11 +1,15 @@
 package br.com.adapter3;
 
-public class Tomada implements OperacoesTomada {
+public abstract class Tomada {
+	
+	private final TipoPlugin tipoPlugin;
 
-	@Override
-	public void ligar(PluginBrasil pluginBrasil) {
-		System.out.println("Conectado tomada: " + pluginBrasil.getTipoPlugin()
-		);
+	public Tomada(final TipoPlugin tipoPlugin) {
+		super();
+		this.tipoPlugin = tipoPlugin;
 	}
 
+	public TipoPlugin getTipoPlugin() {
+		return tipoPlugin;
+	}
 }

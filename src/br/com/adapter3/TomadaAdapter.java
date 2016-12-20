@@ -1,13 +1,18 @@
 package br.com.adapter3;
 
-public class TomadaAdapter implements OperacoesTomada {
+public class TomadaAdapter implements Ligar {
 	
-	
+	private final Ligar ligar;
 
-	@Override
-	public void ligar(PluginBrasil pluginBrasil) {
-		// TODO Auto-generated method stub
-
+	public TomadaAdapter(final Ligar ligar) {
+		super();
+		this.ligar = ligar;
 	}
 
+	@Override
+	public void tomada(final Notebook notebook) {
+		notebook.setTipoPlugin(TipoPlugin.TRES_PINO);
+		ligar.tomada(notebook);
+	}
+	
 }
